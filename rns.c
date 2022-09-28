@@ -33,7 +33,7 @@ int main(int argc, char **argv)
             else
             {
                 buildNode(nodeList, buffer, fp);
-                
+                exit(0);
             }
             break;
         case 's':
