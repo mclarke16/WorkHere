@@ -20,11 +20,11 @@ void printRep(Log *simList)
 
     for(;i<len;++i)
     {
-        printf("Start time: %u", simList[i]->start_time);
-        printf("Message: %s", simList[i]->msg);
-        printf("Message ID: %u", simList[i]->msg_id);
-        printf("Start Node: %u", simList[i]->start_node);
-        printf("End Node: %u", simList[i]->end_node);
+        printf("Start time: %u", simList[i].start_time);
+        printf("Message: %s", simList[i].msg);
+        printf("Message ID: %u", simList[i].msg_id);
+        printf("Start Node: %u", simList[i].start_node);
+        printf("End Node: %u", simList[i].end_node);
     }
 }
 // Remove comments denoted by '#'
