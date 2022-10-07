@@ -9,7 +9,7 @@ int checkString(char buffer[], int size);
 void parseCMDLine(int argc, char argv[]);
 int check_columns(char buffer[]);
 void printHelp();
-void printRep(Log *simList)
+void printRep(Log *simList);
 
 
 void printRep(Log *simList)
