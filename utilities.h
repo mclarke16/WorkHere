@@ -13,7 +13,7 @@ void parseCMDLine(int argc, char argv[]);
 int check_columns(char buffer[]);
 void printHelp();
 
-void printRep(Log *simList, Log *nodeID)
+void printRep(Log *simList, Log nodeID)
 {
     int id = (int*)nodeID;
     printf("Start time: %u\n", simList[id].start_time);
