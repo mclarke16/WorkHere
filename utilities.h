@@ -15,7 +15,7 @@ void printHelp();
 
 void printRep(Log *simList, Log nodeID)
 {
-    int id = (int*)nodeID;
+    int id = (int)nodeID;
     printf("Start time: %u\n", simList[id].start_time);
     printf("Message: %s\n", simList[id].msg);
     printf("Message ID: %u\n", simList[id].msg_id);
