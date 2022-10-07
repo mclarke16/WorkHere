@@ -6,7 +6,7 @@
 #include "node.h"
 
 void printRep(Log *simList, Log nodeID);
-void printAllRep(Log *simList)
+void printAllRep(Log *simList);
 void stripComment(char buffer[]);
 int checkString(char buffer[], int size);
 void parseCMDLine(int argc, char argv[]);
