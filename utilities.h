@@ -28,7 +28,7 @@ void printAllRep(Log *simList)
     int i = 0;
     size_t len = strlen(simList);
 
-    for (; i < len; ++i)
+    for (i; i < len; ++i)
     {
         printf("Start time: %u\n", simList[i].start_time);
         printf("Message: %s\n", simList[i].msg);
