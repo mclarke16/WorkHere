@@ -5,7 +5,7 @@
 #include <stdlib.h>
 #include "node.h"
 
-void printRep(Log *simList, Log nodeID);
+void printRep(Log *simList, unsigned int nodeID);
 void printAllRep(Log *simList);
 void stripComment(char buffer[]);
 int checkString(char buffer[], int size);
@@ -13,14 +13,14 @@ void parseCMDLine(int argc, char argv[]);
 int check_columns(char buffer[]);
 void printHelp();
 
-void printRep(Log *simList, Log nodeID)
+void printRep(Log *simList, unsigned int nodeID)
 {
-    int id = (int)nodeID;
-    printf("Start time: %u\n", simList[id].start_time);
-    printf("Message: %s\n", simList[id].msg);
-    printf("Message ID: %u\n", simList[id].msg_id);
-    printf("Start Node: %u\n", simList[id].start_node);
-    printf("End Node: %u\n", simList[id].end_node);
+    
+    printf("Start time: %u\n", simList[nodeID].start_time);
+    printf("Message: %s\n", simList[nodeID].msg);
+    printf("Message ID: %u\n", simList[nodeID].msg_id);
+    printf("Start Node: %u\n", simList[nodeID].start_node);
+    printf("End Node: %u\n", simList[nodeID].end_node);
 }
 
 void printAllRep(Log *simList)
