@@ -10,21 +10,30 @@ int checkString(char buffer[], int size);
 void parseCMDLine(int argc, char argv[]);
 int check_columns(char buffer[]);
 void printHelp();
-void printRep(Log *simList);
+void printRep(Log *simList, Log nodeID);
+void printAllRep(Log *simList)
 
+void printRep(Log *simList, Log *nodeID)
+{
+    printf("Start time: %u\n", simList[nodeID].start_time);
+    printf("Message: %s\n", simList[nodeID].msg);
+    printf("Message ID: %u\n", simList[nodeID].msg_id);
+    printf("Start Node: %u\n", simList[nodeID].start_node);
+    printf("End Node: %u\n", simList[nodeID].end_node);
+}
 
-void printRep(Log *simList)
+void printAllRep(Log *simList)
 {
     int i = 0;
     size_t len = strlen(simList);
 
-    for(;i<len;++i)
+    for (; i < len; ++i)
     {
-        printf("Start time: %u", simList[i].start_time);
-        printf("Message: %s", simList[i].msg);
-        printf("Message ID: %u", simList[i].msg_id);
-        printf("Start Node: %u", simList[i].start_node);
-        printf("End Node: %u", simList[i].end_node);
+        printf("Start time: %u\n", simList[i].start_time);
+        printf("Message: %s\n", simList[i].msg);
+        printf("Message ID: %u\n", simList[i].msg_id);
+        printf("Start Node: %u\n", simList[i].start_node);
+        printf("End Node: %u\n", simList[i].end_node);
     }
 }
 // Remove comments denoted by '#'
@@ -99,6 +108,5 @@ int check_columns(char buffer[])
     }
     return columns;
 }
-
 
 #endif
