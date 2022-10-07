@@ -15,11 +15,12 @@ void printHelp();
 
 void printRep(Log *simList, Log *nodeID)
 {
-    printf("Start time: %u\n", simList[nodeID].start_time);
-    printf("Message: %s\n", simList[nodeID].msg);
-    printf("Message ID: %u\n", simList[nodeID].msg_id);
-    printf("Start Node: %u\n", simList[nodeID].start_node);
-    printf("End Node: %u\n", simList[nodeID].end_node);
+    int id = (int*)nodeID;
+    printf("Start time: %u\n", simList[id].start_time);
+    printf("Message: %s\n", simList[id].msg);
+    printf("Message ID: %u\n", simList[id].msg_id);
+    printf("Start Node: %u\n", simList[id].start_node);
+    printf("End Node: %u\n", simList[id].end_node);
 }
 
 void printAllRep(Log *simList)
