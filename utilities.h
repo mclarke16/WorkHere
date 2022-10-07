@@ -3,6 +3,7 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <node.h>
 
 void stripComment(char buffer[]);
 int checkString(char buffer[], int size);
