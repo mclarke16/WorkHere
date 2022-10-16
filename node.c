@@ -95,7 +95,7 @@ void build_sim(Log *simList, char buffer[], FILE *sim)
                 // printf("Timestamp: %u\nRepMsg: %s\nNode ID: %u\n---------------\n", simList[i].start_time, simList[i].msg, simList[i].start_node);
                 while (checkNodeID(simList))
                 {
-                    printRep(simList, simList[i].msg_id);
+                    printRep(simList, simList[i].start_node);
                     break;
                 }
                 i++;
