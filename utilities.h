@@ -21,7 +21,7 @@ bool checkNodeID(Log *simList)
     size_t len = sizeof(simList);
     for (i; i < len; ++i)
     {
-        if (simList[i].start_node == simList.start_node[i])
+        if (simList[i].start_node == simList->start_node[i])
         {
             return true;
 
