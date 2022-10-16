@@ -46,7 +46,7 @@ int main(int argc, char **argv)
             else
             {
                 build_sim(simList, buffer, sim);
-                printAllRep(simList)
+                printAllRep(simList);
                 fclose(sim);
             }
             break;
