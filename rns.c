@@ -3,6 +3,7 @@
 #include <stdlib.h>
 #include <getopt.h>
 #include "node.h"
+#include "utilities.h"
 #define BUFF_SIZE 1024
 
 int main(int argc, char **argv)
@@ -33,6 +34,7 @@ int main(int argc, char **argv)
             else
             {
                 buildNode(nodeList, buffer, fp);
+                printAllRep(simList);
                 fclose(fp);
                 free(nodeList->conList);
             }
