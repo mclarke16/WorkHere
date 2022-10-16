@@ -27,13 +27,13 @@ bool checkNodeID(Log *simList)
 
 void printRep(Log *simList, unsigned int nodeID)
 {
-    printf("----------");
+    printf("----------\n");
     printf("Start time: %u\n", simList[nodeID].start_time);
     printf("Message: %s\n", simList[nodeID].msg);
     printf("Message ID: %u\n", simList[nodeID].msg_id);
     printf("Start Node: %u\n", simList[nodeID].start_node);
     printf("End Node: %u\n", simList[nodeID].end_node);
-    printf("----------");
+    printf("----------\n");
 }
 
 void printAllRep(Log *simList)
@@ -43,13 +43,13 @@ void printAllRep(Log *simList)
 
     for (i; i < len; ++i)
     {
-        printf("----------");
+        printf("----------\n");
         printf("Start time: %u\n", simList[i].start_time);
         printf("Message: %s\n", simList[i].msg);
         printf("Message ID: %u\n", simList[i].msg_id);
         printf("Start Node: %u\n", simList[i].start_node);
         printf("End Node: %u\n", simList[i].end_node);
-        printf("----------");
+        printf("----------\n");
     }
 }
 // Remove comments denoted by '#'
