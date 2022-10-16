@@ -34,7 +34,7 @@ int main(int argc, char **argv)
             else
             {
                 buildNode(nodeList, buffer, fp);
-                printAllRep(simList);
+                //printAllRep(simList);
                 fclose(fp);
                 free(nodeList->conList);
             }
