@@ -4,6 +4,7 @@
 #include <getopt.h>
 #include "node.h"
 #define BUFF_SIZE 1024
+#define ARR_SIZE 100
 
 int main(int argc, char **argv)
 {
@@ -11,8 +12,9 @@ int main(int argc, char **argv)
     FILE *fp = NULL;
     FILE *sim = NULL;
     char buffer[BUFF_SIZE];
-    Node nodeList[20];
-    Log simList[100];
+    Node nodeList[ARR_SIZE];
+    Log simList[ARR_SIZE];
+    Rep repList[ARR_SIZE];
     int opt;
 
     fp = fopen(argv[2], "r");
@@ -45,7 +47,7 @@ int main(int argc, char **argv)
             }
             else
             {
-                build_sim(simList, buffer, sim);
+                build_sim(simList, repList, buffer, sim);
                 fclose(sim);
             }
             break;
