@@ -74,6 +74,7 @@ void build_sim(Log *simList, char buffer[], FILE *sim)
         stripComment(buffer);
         size_t len = strlen(buffer);
         int columns = check_columns(buffer);
+        
         for (i = 0; i < len; i++)
         {
 
