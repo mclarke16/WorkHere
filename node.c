@@ -112,7 +112,7 @@ void build_sim(Log *simList, Rep *repList, char buffer[], FILE *sim)
             }
             else if (columns == 1 && strstr(buffer, "endSim"))
             {
-                sscanf(buffer, "%u,%s", &rep[i].start_time, simList[i].msg);
+                sscanf(buffer, "%u,%s", &repList[i].start_time, repList[i].msg);
                 printf("Timestamp: %u\nEndMsg: %s\n****************\n", simList[i].start_time, simList[i].msg);
                 i++;
                 break;
