@@ -43,11 +43,13 @@ void printAllRep(Log *simList)
 
     for (i; i < len; ++i)
     {
+        printf("----------");
         printf("Start time: %u\n", simList[i].start_time);
         printf("Message: %s\n", simList[i].msg);
         printf("Message ID: %u\n", simList[i].msg_id);
         printf("Start Node: %u\n", simList[i].start_node);
         printf("End Node: %u\n", simList[i].end_node);
+        printf("----------");
     }
 }
 // Remove comments denoted by '#'
