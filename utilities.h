@@ -6,7 +6,7 @@
 #include <stdbool.h>
 #include "node.h"
 
-bool checkNodeID(Log *simList)
+bool checkNodeID(Log *simList);
 void printRep(Log *simList, unsigned int nodeID);
 void printAllRep(Log *simList);
 void stripComment(char buffer[]);
@@ -15,11 +15,10 @@ void parseCMDLine(int argc, char argv[]);
 int check_columns(char buffer[]);
 void printHelp();
 
-
 bool checkNodeID(Log *simList)
 {
-   
-    if(simList->start_node != NULL)
+
+    if (simList->start_node != NULL)
     {
         return true;
     }
@@ -28,7 +27,6 @@ bool checkNodeID(Log *simList)
 
 void printRep(Log *simList, unsigned int nodeID)
 {
-    
     printf("Start time: %u\n", simList[nodeID].start_time);
     printf("Message: %s\n", simList[nodeID].msg);
     printf("Message ID: %u\n", simList[nodeID].msg_id);
