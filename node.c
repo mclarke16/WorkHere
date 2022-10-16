@@ -84,7 +84,7 @@ void build_sim(Log *simList, char buffer[], FILE *sim)
             if (columns == 4)
             {
                 sscanf(buffer, "%u,%[^,],%u,%u,%u", &simList[i].start_time, simList[i].msg, &simList[i].msg_id, &simList[i].start_node, &simList[i].end_node);
-                //printf("Timestamp: %u\nMessage: %s\nMessage ID: %u\nStart Node: %u\nEnd Node: %u\n---------------\n", simList[i].start_time, simList[i].msg, simList[i].msg_id, simList[i].start_node, simList[i].end_node);
+                // printf("Timestamp: %u\nMessage: %s\nMessage ID: %u\nStart Node: %u\nEnd Node: %u\n---------------\n", simList[i].start_time, simList[i].msg, simList[i].msg_id, simList[i].start_node, simList[i].end_node);
                 printAllRep(simList);
                 i++;
                 break;
@@ -93,11 +93,7 @@ void build_sim(Log *simList, char buffer[], FILE *sim)
             {
                 sscanf(buffer, "%u,%[^,],%u", &simList[i].start_time, simList[i].msg, &simList[i].start_node);
                 // printf("Timestamp: %u\nRepMsg: %s\nNode ID: %u\n---------------\n", simList[i].start_time, simList[i].msg, simList[i].start_node);
-                while (checkNodeID(simList))
-                {
-                    printRep(simList, simList[i].start_node);
-                    break;
-                }
+                printRep(simList, simList[i].start_node);
                 i++;
                 break;
             }
