@@ -3,8 +3,10 @@
 #include <stdio.h>
 #include <string.h>
 #include <stdlib.h>
+#include <stdbool.h>
 #include "node.h"
 
+bool checkNodeID(Log *simList)
 void printRep(Log *simList, unsigned int nodeID);
 void printAllRep(Log *simList);
 void stripComment(char buffer[]);
@@ -12,6 +14,17 @@ int checkString(char buffer[], int size);
 void parseCMDLine(int argc, char argv[]);
 int check_columns(char buffer[]);
 void printHelp();
+
+
+bool checkNodeID(Log *simList)
+{
+   
+    if(simList->start_node != NULL)
+    {
+        return true;
+    }
+    return false;
+}
 
 void printRep(Log *simList, unsigned int nodeID)
 {
