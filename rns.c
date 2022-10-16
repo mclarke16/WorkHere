@@ -46,8 +46,16 @@ int main(int argc, char **argv)
             else
             {
                 build_sim(simList, buffer, sim);
-                printRep(simList, 3);
-                printAllRep(simList);
+                for (int i = 0; i < sizeof(simList); ++i)
+                {
+                    printf("----------\n");
+                    printf("Start time: %u\n", simList[i].start_time);
+                    printf("Message: %s\n", simList[i].msg);
+                    printf("Message ID: %u\n", simList[i].msg_id);
+                    printf("Start Node: %u\n", simList[i].start_node);
+                    printf("End Node: %u\n", simList[i].end_node);
+                    printf("----------\n");
+                }
                 fclose(sim);
             }
             break;
