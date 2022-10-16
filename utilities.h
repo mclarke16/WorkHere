@@ -48,7 +48,7 @@ void printRep(Log *simList, unsigned int nodeID)
 void printAllRep(Log *simList)
 {
     int i = 0;
-    size_t len = strlen(simList);
+    size_t len = sizeof(simList);
 
     for (i; i < len; ++i)
     {
