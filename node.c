@@ -95,6 +95,7 @@ void build_sim(Log *simList, char buffer[], FILE *sim)
                 while (checkNodeID(simList))
                 {
                     printRep(simList, simList[i].msg_id);
+                    break;
                 }
                 i++;
                 break;
