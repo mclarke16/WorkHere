@@ -93,7 +93,10 @@ void build_sim(Log *simList, char buffer[], FILE *sim)
             {
                 sscanf(buffer, "%u,%[^,],%u", &simList[i].start_time, simList[i].msg, &simList[i].start_node);
                 // printf("Timestamp: %u\nRepMsg: %s\nNode ID: %u\n---------------\n", simList[i].start_time, simList[i].msg, simList[i].start_node);
-                printRep(simList, simList[i].start_node);
+                while(checkNodeID(simList)
+                {
+                    printRep(simList, simList[i].start_node);
+                }
                 i++;
                 break;
             }
