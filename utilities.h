@@ -27,11 +27,13 @@ bool checkNodeID(Log *simList)
 
 void printRep(Log *simList, unsigned int nodeID)
 {
+    printf("----------");
     printf("Start time: %u\n", simList[nodeID].start_time);
     printf("Message: %s\n", simList[nodeID].msg);
     printf("Message ID: %u\n", simList[nodeID].msg_id);
     printf("Start Node: %u\n", simList[nodeID].start_node);
     printf("End Node: %u\n", simList[nodeID].end_node);
+    printf("----------");
 }
 
 void printAllRep(Log *simList)
