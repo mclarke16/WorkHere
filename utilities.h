@@ -17,10 +17,14 @@ void printHelp();
 
 bool checkNodeID(Log *simList)
 {
-
-    if (simList[i]->start_node == simList->start_node[i])
+    int i = 0;
+    size_t len = sizeof(simList);
+    for (i; i < len; ++i)
     {
-        return true;
+        if (simList[i]->start_node == simList->start_node[i])
+        {
+            return true;
+        }
     }
     return false;
 }
