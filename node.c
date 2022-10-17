@@ -51,14 +51,12 @@ void buildNode(Node *nodeList, char buffer[], FILE *fp)
         sscanf(buffer, "%s", value);
         if (strcmp(value, "endNode") == 0)
         {
-            // printf("Found endnode\n");
             printf("---------------\n");
             continue;
         }
 
         if (strcmp(value, "endNet") == 0)
         {
-            // printf("Found endNet\n");
             break;
         }
     }
@@ -74,36 +72,20 @@ void build_sim(Log *simList, Rep *repList, char buffer[], FILE *sim)
         fgets(buffer, BUFF_SIZE, sim);
         checkString(buffer, BUFF_SIZE);
         stripComment(buffer);
-        //size_t len = strlen(buffer);
         int columns = check_columns(buffer);
-        //printf("%d\n", columns);
-
-        // if (columns == 0)
-        // {
-        //     printf("Buffer is empty or Columns function failed\n");
-        //     printf("%d\n", columns);
-        //     printf("%s\n", buffer);
-        // }
         if (columns == 4)
         {
-            //printf("Runs columns == 4\n");
             sscanf(buffer, "%u,%[^,],%u,%u,%u", &simList[sim_count].start_time, simList[sim_count].msg, &simList[sim_count].msg_id, &simList[sim_count].start_node, &simList[sim_count].end_node);
-            //printf("%u\n", simList[sim_count].end_node);
-            //printf("Timestamp: %u\nMessage: %s\nMessage ID: %u\nStart Node: %u\nEnd Node: %u\n---------------\n", simList[i].start_time, simList[i].msg, simList[i].msg_id, simList[i].start_node, simList[i].end_node);
-            //printAllRep(simList, sim_count);
             sim_count++;
         }
         else if (columns == 2 && strstr(buffer, "rep"))
         {
             sscanf(buffer, "%u,%[^,],%u", &repList[rep_count].start_time, repList[rep_count].msg, &repList[rep_count].selected_node);
-            // printf("Timestamp: %u\nRepMsg: %s\nNode ID: %u\n---------------\n", repList[i].start_time, repList[i].msg, repList[i].selected_node);
-            //int len = sizeof(repList);
             rep_count++;
 
             int j, k = 0;
             for (j; j < rep_count; ++j)
             {
-                //int len2 = sizeof(simList);
                 for (k; k < sim_count; ++k)
                 {
                     if (repList[j].selected_node == simList[k].msg_id)
@@ -115,9 +97,7 @@ void build_sim(Log *simList, Rep *repList, char buffer[], FILE *sim)
         }
         else if (columns == 1 && strstr(buffer, "rep"))
         {
-            //printf("Runs columns == 1\n");
             sscanf(buffer, "%u,%[^,]", &repList[rep_count].start_time, repList[rep_count].msg);
-            // printf("Timestamp: %u\nRepMsg: %s\n---------------\n", repList[i].start_time, repList[i].msg);
             printAllRep(simList, sim_count);
             rep_count++;
         }
@@ -125,7 +105,6 @@ void build_sim(Log *simList, Rep *repList, char buffer[], FILE *sim)
         {
             sscanf(buffer, "%u,%s", &repList[rep_count].start_time, repList[rep_count].msg);
             printf("Timestamp: %u\nEndMsg: %s\n****************\n", repList[rep_count].start_time, repList[rep_count].msg);
-            //i++;
         }
     }
 }
