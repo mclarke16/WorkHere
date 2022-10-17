@@ -7,8 +7,8 @@
 #include "node.h"
 
 bool checkNodeID(Log *simList);
-void printRep(Log *simList, unsigned int nodeID);
-void printAllRep(Log *simList);
+void printRep(Log *simList);
+void printAllRep(Log *simList, int sim_count);
 void stripComment(char buffer[]);
 int checkString(char buffer[], int size);
 void parseCMDLine(int argc, char argv[]);
@@ -29,36 +29,25 @@ bool checkNodeID(Log *simList)
     return false;
 }
 
-void printRep(Log *simList, unsigned int nodeID)
+void printRep(Log *simList)
 {
+    printf("----------\n");
+    printf("Start time: %u\n", simList->start_time);
+    printf("Message: %s\n", simList->msg);
+    printf("Message ID: %u\n", simList->msg_id);
+    printf("Start Node: %u\n", simList->start_node);
+    printf("End Node: %u\n", simList->end_node);
+    printf("----------\n");
 
-    while(checkNodeID(simList))
-    {
-    printf("----------\n");
-    printf("Start time: %u\n", simList[nodeID].start_time);
-    printf("Message: %s\n", simList[nodeID].msg);
-    printf("Message ID: %u\n", simList[nodeID].msg_id);
-    printf("Start Node: %u\n", simList[nodeID].start_node);
-    printf("End Node: %u\n", simList[nodeID].end_node);
-    printf("----------\n");
-    break;
-    }
 }
 
-void printAllRep(Log *simList)
+void printAllRep(Log *simList, int sim_count)
 {
     int i = 0;
-    size_t len = sizeof(simList);
 
-    for (i; i < len; ++i)
+    for (i; i < sim_count; ++i)
     {
-        printf("----------\n");
-        printf("Start time: %u\n", simList[i].start_time);
-        printf("Message: %s\n", simList[i].msg);
-        printf("Message ID: %u\n", simList[i].msg_id);
-        printf("Start Node: %u\n", simList[i].start_node);
-        printf("End Node: %u\n", simList[i].end_node);
-        printf("----------\n");
+        printRep(&simList[i]);
     }
 }
 
