@@ -61,6 +61,13 @@ void printAllRep(Log *simList)
         printf("----------\n");
     }
 }
+
+bool checkNodeID(Log *simList)
+{
+    int i = 0;
+
+    if(simList[])
+}
 // Remove comments denoted by '#'
 void stripComment(char buffer[])
 {
