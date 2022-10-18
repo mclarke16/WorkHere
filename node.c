@@ -30,22 +30,21 @@ void buildNode(Node *nodeList, char buffer[], FILE *fp)
             nodeList->conList = (int *)malloc(sizeof(int) * nodeList[i].conCount);
 
             // Look through buffer conCount amount of times and assign
-            int x, j = 0;
-            for (x = 0; x < nodeList->conCount; x++)
-            {
-                for (j; j < nodeList[i].conCount; j++)
-                {
+            int x = 0;
+            int j = 0;
 
-                    fgets(buffer, BUFF_SIZE, fp);
-                    if (buffer[0] == COMMENT_MARKER)
-                    {
-                        j -= 1;
-                        continue;
-                    }
-                    sscanf(buffer, "%d", &nodeList->conList[j]);
-                    printf("Connection %d: %d\n", x, nodeList->conList[j]);
-                    x++;
+            for (j; j < nodeList[i].conCount; j++)
+            {
+
+                fgets(buffer, BUFF_SIZE, fp);
+                if (buffer[0] == COMMENT_MARKER)
+                {
+                    j -= 1;
+                    continue;
                 }
+                sscanf(buffer, "%d", &nodeList->conList[j]);
+                printf("Connection %d: %d\n", x, nodeList->conList[j]);
+                x++;
             }
         }
         sscanf(buffer, "%s", value);
@@ -78,21 +77,27 @@ void build_sim(Log *simList, Rep *repList, char buffer[], FILE *sim)
             sscanf(buffer, "%u,%[^,],%u,%u,%u", &simList[sim_count].start_time, simList[sim_count].msg, &simList[sim_count].msg_id, &simList[sim_count].start_node, &simList[sim_count].end_node);
             sim_count++;
         }
-        else if (columns == 2 && strstr(buffer, "rep"))
+        else if (columns == 2 && strstr(buffer, "rep,"))
         {
             sscanf(buffer, "%u,%[^,],%u", &repList[rep_count].start_time, repList[rep_count].msg, &repList[rep_count].selected_node);
             rep_count++;
 
-            int j, k = 0;
+            int j = 0;
+            int k = 0;
+
             for (j; j < rep_count; ++j)
             {
                 for (k; k < sim_count; ++k)
                 {
                     if (repList[j].selected_node == simList[k].msg_id)
                     {
+                        printf("----++++++-----\n");
                         printRep(&simList[k]);
+                        printf("----++++++-----\n");
                     }
                 }
+
+                k = 0;
             }
         }
         else if (columns == 1 && strstr(buffer, "rep"))
