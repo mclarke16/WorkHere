@@ -93,7 +93,7 @@ void build_sim(Log *simList, Rep *repList, char buffer[], FILE *sim)
                     {
                         printf("REPORT START\nMsgID:%d\n", simList[k].msg_id);
                         printRep(&simList[k]);
-                        printf("REPORT END");
+                        printf("REPORT END\n");
                     }
                 }
 
