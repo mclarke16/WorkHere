@@ -91,8 +91,9 @@ void build_sim(Log *simList, Rep *repList, char buffer[], FILE *sim)
                 {
                     if (repList[j].selected_node == simList[k].msg_id)
                     {
-                        printf("REPORT-MsgID:%d\n", simList[k].msg_id);
+                        printf("REPORT START\nMsgID:%d\n", simList[k].msg_id);
                         printRep(&simList[k]);
+                        printf("REPORT END");
                     }
                 }
 
