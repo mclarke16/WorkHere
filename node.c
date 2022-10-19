@@ -102,7 +102,9 @@ void build_sim(Log *simList, Rep *repList, char buffer[], FILE *sim)
         else if (columns == 1 && strstr(buffer, "rep"))
         {
             sscanf(buffer, "%u,%[^,]", &repList[rep_count].start_time, repList[rep_count].msg);
+            printf("FULL REPORT START\n");
             printAllRep(simList, sim_count);
+            printf("FULL REPORT END\n");
             rep_count++;
         }
         else if (columns == 1 && strstr(buffer, "endSim"))
