@@ -96,7 +96,6 @@ void build_sim(Log *simList, Rep *repList, char buffer[], FILE *sim)
                         printf("REPORT END\n");
                     }
                 }
-
                 k = 0;
             }
         }
