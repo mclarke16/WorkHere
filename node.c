@@ -80,7 +80,7 @@ void build_sim(Log *simList, Rep *repList, char buffer[], FILE *sim)
         else if (columns == 2 && strstr(buffer, "rep,"))
         {
             sscanf(buffer, "%u,%[^,],%u", &repList[rep_count].start_time, repList[rep_count].msg, &repList[rep_count].selected_node);
-            rep_count++;
+            
 
             int j = 0;
             int k = 0;
@@ -98,6 +98,7 @@ void build_sim(Log *simList, Rep *repList, char buffer[], FILE *sim)
                 }
                 k = 0;
             }
+            rep_count++;
         }
         else if (columns == 1 && strstr(buffer, "rep"))
         {
