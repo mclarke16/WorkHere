@@ -86,7 +86,7 @@ void build_sim(Log *simList, Rep *repList, char buffer[], FILE *sim)
             int k = 0;
 
             for (j; j < rep_count; ++j)
-            {
+            {rep_count++;
                 for (k; k < sim_count; ++k)
                 {
                     if (repList[j].selected_node == simList[k].msg_id)
@@ -94,7 +94,7 @@ void build_sim(Log *simList, Rep *repList, char buffer[], FILE *sim)
                         printf("REPORT START\nMsgID:%d\n", simList[k].msg_id);
                         printRep(&simList[k]);
                         printf("REPORT END\n");
-                        rep_count++;
+                        
                     }
                 }
                 k = 0;
