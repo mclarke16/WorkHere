@@ -24,7 +24,7 @@ typedef struct report
 {
     unsigned int start_time;
     char *msg[512];
-    unsigned int selected_node;
+    int selected_node;
     int *repList;
 } Rep;
 

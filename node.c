@@ -97,6 +97,7 @@ void build_sim(Log *simList, Rep *repList, char buffer[], FILE *sim)
                     }
                 }
                 k = 0;
+                repList[j].selected_node = -1;
             }
         }
         else if (columns == 1 && strstr(buffer, "rep"))
