@@ -74,8 +74,9 @@ void build_sim(Log *simList, Rep *repList, char buffer[], FILE *sim)
         int columns = check_columns(buffer);
         if (columns == 4)
         {
-            sscanf(buffer, "%u,%[^,],%u,%u,%u", &simList[sim_count].start_time, simList[sim_count].msg, &simList[sim_count].msg_id, &simList[sim_count].start_node, &simList[sim_count].end_node);
             sim_count++;
+            sscanf(buffer, "%u,%[^,],%u,%u,%u", &simList[sim_count].start_time, simList[sim_count].msg, &simList[sim_count].msg_id, &simList[sim_count].start_node, &simList[sim_count].end_node);
+            
         }
         else if (columns == 2 && strstr(buffer, "rep,"))
         {
